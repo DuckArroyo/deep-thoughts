@@ -2,6 +2,9 @@
 // importing thoughts and users
 const { User, Thought } = require('../models');
 
+// importing signToken
+const { signToken } = require('../utils/auth');
+
 // Authentication handling
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -38,7 +41,9 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
-      return user;
+      const token = signToken(user);
+
+      return { token, user };
     },
 
     login: async (parent, { email, password }) => {
@@ -54,7 +59,8 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
 
-      return user;
+      const token = signToken(user);
+      return { token, user };
     },
   },
 };
