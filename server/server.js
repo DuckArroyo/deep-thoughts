@@ -7,6 +7,9 @@ const { ApolloServer } = require('apollo-server-express');
 // import our typeDefs and resolvers //!Apollo requirement
 const { typeDefs, resolvers } = require('./schemas');
 
+// Middleware function
+const { authMiddleware } = require('./utils/auth');
+
 //TODO Standard server
 const db = require('./config/connection');
 
@@ -20,7 +23,7 @@ const startServer = async () => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: authMiddleware, //!Creating uncaught promise. Not in 21.1 codesnap
+    context: authMiddleware,
   });
   // Start the Apollo server
   await server.start();

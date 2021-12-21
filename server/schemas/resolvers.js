@@ -13,14 +13,18 @@ const resolvers = {
   Query: {
 
     // JWS token query
-    me: async (parent, args) => {
+    me: async (parent, args, context) => {
+      if(context.user) {
       const userData = await User.findOne({})
         .select('-__v -password')
         .populate('thoughts')
         .populate('friends');
   
       return userData;
-    },
+    }
+
+    throw new AuthenticationError('Not logged in');
+  },
 
 
     // get all thoughts
