@@ -11,6 +11,18 @@ const { AuthenticationError } = require('apollo-server-express');
 //Resolver for thoughts
 const resolvers = {
   Query: {
+
+    // JWS token query
+    me: async (parent, args) => {
+      const userData = await User.findOne({})
+        .select('-__v -password')
+        .populate('thoughts')
+        .populate('friends');
+  
+      return userData;
+    },
+
+
     // get all thoughts
     thoughts: async (parent, { username }) => {
       const params = username ? { username } : {};

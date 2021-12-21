@@ -20,7 +20,7 @@ const startServer = async () => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    //context: authMiddleware, //!Creating uncaught promise. Not in 21.1 codesnap
+    context: authMiddleware, //!Creating uncaught promise. Not in 21.1 codesnap
   });
   // Start the Apollo server
   await server.start();
