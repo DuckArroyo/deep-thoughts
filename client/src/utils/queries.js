@@ -19,7 +19,7 @@ export const QUERY_THOUGHTS = gql`
   }
 `;
 
-//Used for single thought 
+//Used for single thought
 export const QUERY_THOUGHT = gql`
   query thought($id: ID!) {
     thought(_id: $id) {
@@ -33,6 +33,28 @@ export const QUERY_THOUGHT = gql`
         createdAt
         username
         reactionBody
+      }
+    }
+  }
+`;
+
+//Used for user profiles
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      friendCount
+      friends {
+        _id
+        username
+      }
+      thoughts {
+        _id
+        thoughtText
+        createdAt
+        reactionCount
       }
     }
   }
