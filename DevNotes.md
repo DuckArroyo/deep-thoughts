@@ -147,3 +147,17 @@ Each item is used in App.js
 Created utils and queries.js
 Imported to Home.js for use
 Then implement into the Home const.
+Created ThoughtList component and implemented onto Home.js
+
+
+## 21.3.6 Setup Full-Stack Structure with client-side react app
+
+In the project root run `npm init`
+
+## `npm run start` - will run the back end server
+
+## `npm run develop` - will run React development server and the server with nodemon
+
+## `npm run seed` - will go into the server dir and seed the files
+
+## `npm run install` - will install dependencies at root, server, and client level
