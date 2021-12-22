@@ -120,3 +120,30 @@ To add thoughts to the app
 - test the mutation in graphQL
   - post a new thought
   - since the mutation carries the user context, the only items to include in the post is `thoughtText`
+
+## 21.3.4 Install and Set Up Apollo Client
+
+We'll use all of the following libraries together to create the overall client-side functionality:
+
+- Apollo Client (@apollo/client) is an all-in-one dependency that enables us to connect to a GraphQL API server and execute queries or mutations using their own special form of React Hooks.
+- GraphQL (graphql) is a dependency much like MySQL2 was for Sequelize. We don't use it directly, but it needs to be present so that the GraphQL syntax used with Apollo Client can be understood.
+
+Create Apollo Provider
+
+- In App.js import the apollo requirements.
+
+  - `ApolloProvider` is a special type of React component that we'll use to provide data to all of the other components.
+
+  - `ApolloClient` is a constructor function that will help initialize the connection to the GraphQL API server.
+
+  - `InMemoryCache` enables the Apollo Client instance to cache API response data so that we can perform requests more efficiently.
+
+  - `createHttpLink` allows us to control how the Apollo Client makes a request. Think of it like middleware for the outbound network requests.
+
+Each item is used in App.js
+
+## 21.3.5 Create ThoughtList component
+
+Created utils and queries.js
+Imported to Home.js for use
+Then implement into the Home const.
