@@ -149,7 +149,6 @@ Imported to Home.js for use
 Then implement into the Home const.
 Created ThoughtList component and implemented onto Home.js
 
-
 ## 21.3.6 Setup Full-Stack Structure with client-side react app
 
 In the project root run `npm init`
@@ -161,3 +160,17 @@ In the project root run `npm init`
 ## `npm run seed` - will go into the server dir and seed the files
 
 ## `npm run install` - will install dependencies at root, server, and client level
+
+## 21.4
+
+## 21.4.3 Set Up the Main URL Routes Using React Router
+
+Explains routes
+
+## 21.4.4 Implement the Navigation Links and URL Parameters
+
+Explains `Link` functionality and implementation
+
+## 21.4.5 Build the "Single Thought" Page
+
+Add the query in the utils folder/file to be used in Single Thought
