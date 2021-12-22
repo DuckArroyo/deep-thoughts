@@ -1,6 +1,9 @@
 //TODO Standard server
 const express = require('express');
 
+//
+const path = require('path');
+
 // import ApolloServer //!Apollo requirement
 const { ApolloServer } = require('apollo-server-express');
 
@@ -38,6 +41,17 @@ const startServer = async () => {
 //!Apollo requirement
 // Initialize the Apollo server
 startServer();
+
+// Serve up static assets
+// Express.js server to serve any files in the React application's build directory in the client folder. 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
+// wildcard GET route for the server
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 //TODO Standard server
 app.use(express.urlencoded({ extended: false }));
