@@ -1,17 +1,20 @@
+## [Heroku Live app](https://young-basin-18669.herokuapp.com/)
+
 ## At the root level
 
 This commands will initate the processes
+
 - `npm run start` - will run the back end server
 - `npm run develop` - will run React development server and the server with nodemon
 - `npm run seed` - will go into the server dir and seed the files
 - `npm run install` - will install dependencies at root, server, and client level
 
 "scripts": {
-    "start": "node server/server.js",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed"
-    }
+"start": "node server/server.js",
+"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+"install": "cd server && npm i && cd ../client && npm i",
+"seed": "cd server && npm run seed"
+}
 
 ## Front End: React
 

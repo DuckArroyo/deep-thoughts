@@ -174,3 +174,8 @@ Explains `Link` functionality and implementation
 ## 21.4.5 Build the "Single Thought" Page
 
 Add the query in the utils folder/file to be used in Single Thought
+
+## Step by step instructions to connect DB
+
+18.5.5 Deploy to Heroku
+https://courses.bootcampspot.com/courses/1056/pages/18-dot-5-5-deploy-to-heroku?module_item_id=261726
