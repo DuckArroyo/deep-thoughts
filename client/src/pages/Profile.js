@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ThoughtForm from '../components/ThoughtForm';
+
 //Redirect, will allow us to redirect the user to another route within the application
 import { Redirect, useParams } from 'react-router-dom';
 
@@ -84,6 +86,7 @@ const Profile = () => {
           />
         </div>
       </div>
+      <div className='mb-3'>{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
