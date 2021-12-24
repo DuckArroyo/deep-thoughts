@@ -14,7 +14,7 @@ const resolvers = {
     // JWS token query
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({})
+        const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('thoughts')
           .populate('friends');
@@ -40,7 +40,7 @@ const resolvers = {
         .populate('friends')
         .populate('thoughts');
     },
-    
+
     // get all thoughts
     thoughts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -52,7 +52,6 @@ const resolvers = {
       return Thought.findOne({ _id });
     },
   },
-
 
   Mutation: {
     addUser: async (parent, args) => {
