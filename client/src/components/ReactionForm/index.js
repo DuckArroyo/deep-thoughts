@@ -11,8 +11,8 @@ const ReactionForm = ({ thoughtId }) => {
       setBody(event.target.value);
       setCharacterCount(event.target.value.length);
     }
-    console.log(event.target.value);
-    console.log(event.target.value.length);
+    // console.log(event.target.value);
+    // console.log(event.target.value.length);
   };
 
   const handleFormSubmit = async (event) => {

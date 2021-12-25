@@ -1,18 +1,17 @@
 import React from 'react';
 import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
+//Import friendList to be used on right column
+import FriendList from '../components/FriendList';
+
+// Import logged in verificatio
+import Auth from '../utils/auth';
 
 //Import the Apollo hook - which comes from ApolloProvider
 import { useQuery } from '@apollo/client';
 
 //Import the querie saved in the utils/queries.js file
 import { QUERY_THOUGHTS, QUERY_ME_BASIC } from '../utils/queries';
-
-//Import friendList to be used on right column
-import FriendList from '../components/FriendList';
-
-// Import logged in verificatio
-import Auth from '../utils/auth';
 
 const Home = () => {
   //use useQuery hook to make request

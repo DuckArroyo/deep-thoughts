@@ -7,6 +7,7 @@ import { ADD_THOUGHT } from '../../utils/mutations';
 const ThoughtForm = () => {
   const [thoughtText, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
+
   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
     update(cache, { data: { addThought } }) {
       try {
@@ -34,8 +35,8 @@ const ThoughtForm = () => {
       setText(event.target.value);
       setCharacterCount(event.target.value.length);
     }
-    console.log(event.target.value);
-    console.log(event.target.value.length);
+    // console.log(event.target.value);
+    // console.log(event.target.value.length);
   };
 
   const handleFormSubmit = async (event) => {

@@ -1,9 +1,6 @@
 //TODO Standard server
 const express = require('express');
-
-//
 const path = require('path');
-
 // import ApolloServer //!Apollo requirement
 const { ApolloServer } = require('apollo-server-express');
 
