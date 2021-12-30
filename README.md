@@ -2,7 +2,7 @@
 
 ## At the root level
 
-This commands will initate the processes
+These commands will initate the processes
 
 - `npm run start` - will run the back end server
 - `npm run develop` - will run React development server and the server with nodemon
